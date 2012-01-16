@@ -1,0 +1,39 @@
+This is Perl module Dist::Maker::Template::ModuleBuild.
+
+INSTALLATION
+
+Type the following command:
+
+    $ curl -L http://cpanmin.us | perl - Dist::Maker::Template::ModuleBuild
+
+Or install cpanm and then run the following command to install
+Dist::Maker::Template::ModuleBuild:
+
+    $ cpanm Dist::Maker::Template::ModuleBuild
+
+If you get an archive of this distribution, unpack it and build it
+as per the usual:
+
+    $ tar xzf Dist-Maker-Template-ModuleBuild-$version.tar.gz
+    $ cd Dist-Maker-Template-ModuleBuild-$version
+    $ perl Build.PL
+    $ ./Build && ./Build test
+
+Then install it:
+
+    $ ./Build install
+
+DOCUMENTATION
+
+Dist::Maker::Template::ModuleBuild documentation is available as in POD. So you can do:
+
+    $ perldoc Dist::Maker::Template::ModuleBuild
+
+to read the documentation online with your favorite pager.
+
+LICENSE AND COPYRIGHT
+
+Copyright (c) 2012, Nishibayashi Takuji. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
