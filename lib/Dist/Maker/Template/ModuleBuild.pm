@@ -41,9 +41,10 @@ my $buiild = Module::Build->new(
     requires => {
     },
     build_requires => {
+        'Test::LoadAllModules'       => '0.021',
         'Test::More'                 => '0.98',
     },
-    test_files => -d 'xt/' ? 't/ xt/' : 't/',
+    test_files => (-d '.git/' || $ENV{RELEASE_TESTING}) ? 't/ xt/' : 't/',
     recursive_test_files => 1,
 
     create_readme => 1,
@@ -232,19 +233,21 @@ it under the same terms as Perl itself.
 =cut
 
 @@ t/000_load.t
-#!perl -w
 use strict;
-use Test::More tests => 1;
+use Test::LoadAllModules;
 
 BEGIN {
-    use_ok '<: $dist.module :>';
+    all_uses_ok(
+        search_path => "<: $dist.module :>",
+        except => [],
+    );
 }
+
 
 : block load_t_testing_info {
 diag "Testing <: $dist.module :>/$<: $dist.module :>::VERSION";
 : }
 @@ t/001_basic.t
-#!perl -w
 use strict;
 use Test::More;
 
@@ -257,7 +260,6 @@ pass;
 
 done_testing;
 @@ xt/pod.t
-#!perl -w
 use strict;
 use Test::More;
 eval q{use Test::Pod 1.14};
@@ -267,7 +269,6 @@ plan skip_all => 'Test::Pod 1.14 required for testing POD'
 all_pod_files_ok();
 
 @@ xt/podspell.t
-#!perl -w
 use strict;
 use Test::More;
 
@@ -381,7 +382,6 @@ maint # co-maint
 
 : block podcoverage_t {
 @@ xt/podcoverage.t
-#!perl -w
 use Test::More;
 eval q{use Test::Pod::Coverage 1.04};
 plan skip_all => 'Test::Pod::Coverage 1.04 required for testing POD coverage'
@@ -394,7 +394,6 @@ all_pod_coverage_ok({
 
 : block podsynopsis_t {
 @@ xt/podsynopsis.t
-#!perl -w
 use strict;
 use Test::More;
 eval q{use Test::Synopsis};
@@ -442,6 +441,7 @@ Module::Build
 
 # author's tests
 : block author_requires_cpanm_test_requires -> {
+Test::LoadAllModules
 Test::Pod
 Test::Pod::Coverage
 Test::Spelling
