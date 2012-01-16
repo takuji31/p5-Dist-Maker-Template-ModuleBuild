@@ -10,7 +10,7 @@ sub dist_init {
     eval {
         $self->run_command($^X, 'Build.PL');
         $self->run_command($^X, 'Build', 'manifest');
-        $self->run_command('git', '--init');
+        $self->run_command('git', 'init');
         $self->run_command('git', 'add', '.');
         $self->run_command('git', 'commit', '-m', 'initial commit');
     };
