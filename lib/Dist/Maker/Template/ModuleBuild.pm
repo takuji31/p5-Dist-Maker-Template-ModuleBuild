@@ -34,9 +34,9 @@ use Module::Build;
 
 my $buiild = Module::Build->new(
     dist_author => '<: $user.email :> <<: $user.email :>>',
-    dist_abstract => '<: $dist :>?',
+    dist_abstract => '<: $dist :>',
     license     => 'perl',
-    module_name => '<: $dist :>',
+    module_name => '<: $dist.module :>',
     configure_requires => {'Module::Build' => '0.38'},
     requires => {
     },
