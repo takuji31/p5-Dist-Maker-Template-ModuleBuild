@@ -63,6 +63,7 @@
 
 \.bs$
 \.o(?:|bj|ld|ut)$
+\.sw(?:p|o)
 nytprof
 MYMETA\.yml$
 .dim.pl

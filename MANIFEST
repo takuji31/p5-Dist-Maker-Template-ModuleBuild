@@ -1,6 +1,7 @@
 Build.PL
 Changes
 lib/Dist/Maker/Template/ModuleBuild.pm
+lib/Dist/Maker/Template/ModuleBuild/WithGit.pm
 MANIFEST			This list of files
 MANIFEST.SKIP
 README

@@ -5,6 +5,8 @@ use MouseX::StrictConstructor;
 
 use Dist::Maker::Util qw(run_command);
 
+our $VERSION = "0.01";
+
 extends 'Dist::Maker::Base';
 with    'Dist::Maker::Template';
 
@@ -148,6 +150,7 @@ CheckChangeLog.files = Changes
 
 \.bs$
 \.o(?:|bj|ld|ut)$
+\.sw(?:p|o)
 nytprof
 .dim.pl
 .shipit
