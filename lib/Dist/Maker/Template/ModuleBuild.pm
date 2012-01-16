@@ -149,7 +149,9 @@ CheckChangeLog.files = Changes
 \.bs$
 \.o(?:|bj|ld|ut)$
 nytprof
-MYMETA\.yml$
+.dim.pl
+.shipit
+
 
 : block manifest_skip { }
 @@ lib/<: $dist.path :>.pm
