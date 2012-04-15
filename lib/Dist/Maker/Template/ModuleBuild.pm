@@ -235,6 +235,7 @@ it under the same terms as Perl itself.
 @@ t/000_load.t
 use strict;
 use Test::LoadAllModules;
+use Test::More;
 
 BEGIN {
     all_uses_ok(
