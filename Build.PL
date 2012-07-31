@@ -9,6 +9,7 @@ my $buiild = Module::Build->new(
     module_name => 'Dist::Maker::Template::ModuleBuild',
     configure_requires => {'Module::Build' => '0.38'},
     requires => {
+        'Dist::Maker' => '0.05',
     },
     build_requires => {
         'Test::More'                 => '0.98',
