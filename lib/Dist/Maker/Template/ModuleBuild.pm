@@ -33,7 +33,7 @@ use warnings;
 use Module::Build;
 
 my $buiild = Module::Build->new(
-    dist_author => '<: $user.email :> <<: $user.email :>>',
+    dist_author => '<: $user.name :> <<: $user.email :>>',
     dist_abstract => '<: $dist :>',
     license     => 'perl',
     module_name => '<: $dist.module :>',
